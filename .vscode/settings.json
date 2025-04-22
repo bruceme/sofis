@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        "fg-data-source.h": "c",
+        "fg-tape-data-source.h": "c",
+        "data-source.h": "c"
+    }
+}
