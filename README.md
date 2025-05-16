@@ -54,7 +54,7 @@ If you don't want 3D synthetic vision you won't need glib and SDL_gpu. Just set
 > [!TIP]
 > The following command should give you a comparable output:
 > ```sh
-> $ pkg-config glib-2.0 sdl2 SDL2_image libgps --cflags
+> pkg-config glib-2.0 sdl2 SDL2_image libgps --cflags
 > -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/SDL2 -D_REENTRANT
 > ```
 
@@ -76,7 +76,7 @@ Packages to install before the build:
 * git
 
 ```sh
-$ sudo apt-get install build-essential cmake pkg-config git
+sudo apt-get install build-essential cmake pkg-config git
 ```
 
 Packages providing dependencies:
@@ -97,21 +97,21 @@ $ sudo apt-get install libcurl4-gnutls-dev gpsd libgps-dev libsdl2-dev libsdl2-i
 > Unless you don't want to build the 3D version, you need to build and install SDL_gpu first. Please refer to the build instructions at [SDL_gpu][3].
 
 ```sh
-$ git clone https://github.com/sam-itt/sofis
-$ cd sofis
-$ git submodule update --init --recursive
-$ cd sdl-pcf
-$ autoreconf -i
-$ ./configure --with-texture=sdl_gpu
+git clone https://github.com/sam-itt/sofis
+cd sofis
+git submodule update --init --recursive
+cd sdl-pcf
+autoreconf -i
+./configure --with-texture=sdl_gpu
 ```
 
 Here we just need configure to generate a header for sdl_gpu to be usable.
 Do *not* type make to build sdl_pcf at this stage. Continue with:
 
 ```sh
-$ cd ..
-$ wget https://github.com/sam-itt/fg-roam/archive/media.tar.gz
-$ tar -xf media.tar.gz --strip-components=1 -C fg-roam/
+cd ..
+wget https://github.com/sam-itt/fg-roam/archive/media.tar.gz
+tar -xf media.tar.gz --strip-components=1 -C fg-roam/
 ```
 
 If you are building for/on the Raspberry Pi, create a `switches.local` with the following content:
@@ -130,7 +130,7 @@ be fine.
 
 Then, proceed with the build:
 ```sh
-$ make
+make
 ```
 
 ## Running
@@ -138,7 +138,7 @@ $ make
 You can then run the self-contained demo with:
 
 ```sh
-$ ./sofis --fgtape
+./sofis --fgtape
 ```
 
 SoFIS comes with pre-recorded flight data of a circuit around LFLG (Grenoble,
@@ -201,7 +201,7 @@ You need to first connect the device you'll be running SoFIS to Startux over
 wifi, and the you can launch SoFIS as follows:
 
 ```sh
-$ ./sofis --stratux
+./sofis --stratux
 ```
 
 ## Getting data from sensors
@@ -246,7 +246,7 @@ value can be changed in `switches.local`
 
 Run SoFIS with the following command line:
 ```sh
-$ ./sofis --sensors
+./sofis --sensors
 ```
 
 ## Running on the Raspberry Pi (1/Zero)
@@ -274,9 +274,9 @@ We are going to assume that your sd-card is `/dev/mmcblkX`. Note that we are not
 using partitions, but the whole device.
 
 ```sh
-$ wget https://github.com/sam-itt/gentoo-pie/releases/download/0.0.1/sdcard-gentoo.img.xz
-$ wget https://github.com/sam-itt/gentoo-pie/releases/download/0.0.1/sdcard-gentoo.img.sha1
-$ sha1sum -c sdcard-gentoo.img.xz.sha1
+wget https://github.com/sam-itt/gentoo-pie/releases/download/0.0.1/sdcard-gentoo.img.xz
+wget https://github.com/sam-itt/gentoo-pie/releases/download/0.0.1/sdcard-gentoo.img.sha1
+sha1sum -c sdcard-gentoo.img.xz.sha1
 sdcard-gentoo.img.xz: OK
 # xzcat sdcard-gentoo.img.xz > /dev/mmcblkX && sync
 ```
@@ -311,7 +311,7 @@ Download the "Armbian 25.2.x bookworm Minimal" from [11]:
 * Launch and setup the installation following Armbian's instructions.
 * Install additional packages required for building and the "glu"
 ```sh
-$ sudo apt install mesa-utils libgl1-mesa-dev libglu1-mesa-dev automake autoconf libtool
+sudo apt install mesa-utils libgl1-mesa-dev libglu1-mesa-dev automake autoconf libtool
 ```
 * Follow the identical build steps above
 
