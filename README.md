@@ -86,6 +86,7 @@ Packages providing dependencies:
 * libsdl2-dev
 * libsdl2-image-dev
 * libglib2.0-dev
+* wiringPi
 
 ```sh
 $ sudo apt-get install libcurl4-gnutls-dev gpsd libgps-dev libsdl2-dev libsdl2-image-dev libglib2.0-dev
@@ -312,6 +313,8 @@ Download the "Armbian 25.2.x bookworm Minimal" from [11]:
 * Install additional packages required for building and the "glu"
 ```sh
 sudo apt install mesa-utils libgl1-mesa-dev libglu1-mesa-dev automake autoconf libtool
+wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-arm64.deb
+sudo dpkg -i wiringpi-2.61-1-arm64.deb
 ```
 * Follow the identical build steps above
 
